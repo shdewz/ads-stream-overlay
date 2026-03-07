@@ -6,8 +6,6 @@ import { RetroDialog } from '@/components/RetroDialog';
 import { Taskbar } from '@/components/Taskbar';
 import styles from './styles/Intro.module.css';
 
-const DIVISION = 'DIVISION 1';
-
 const useCountdown = (targetMs: number | null): number | null => {
   const [remaining, setRemaining] = useState<number | null>(null);
 
@@ -42,6 +40,7 @@ export const Intro = () => {
   const remaining = useCountdown(comingUp?.time ?? null);
 
   const stage = beatmaps?.stage ?? '';
+  const division = beatmaps?.division != null ? `DIVISION ${beatmaps.division}` : 'DIVISION 1';
   const dialogTitle = stage
     ? stage.toUpperCase().replace(/\s+/g, '_') + '_INTRO.TXT'
     : 'COMING_UP.TXT';
@@ -50,7 +49,7 @@ export const Intro = () => {
     <div className={styles.root}>
       <div className={styles.content}>
         <div className={styles.logoBlock}>
-          <Logo division={DIVISION} size="156px" />
+          <Logo division={division} size="156px" />
         </div>
         <RetroDialog title={dialogTitle} className={styles.dialog}>
           <div className={styles.dialogBody}>
