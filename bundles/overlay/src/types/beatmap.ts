@@ -17,6 +17,7 @@ export interface MappoolBeatmap {
 
 export interface MappoolData {
   stage: string;
+  division?: number | string;
   beatmaps: MappoolBeatmap[];
 }
 

@@ -1,13 +1,15 @@
 import { TeamPanel } from './TeamPanel';
 import { Logo } from '@/components/Logo';
 import { useTosu } from '@/hooks/useTosu';
+import { useBeatmaps } from '@/hooks/useBeatmaps';
 import styles from './styles/Header.module.css';
-
-const STAGE_NAME = 'GRAND FINALS';
-const DIVISION = 'DIVISION 1';
 
 export const Header = () => {
   const { data } = useTosu();
+  const poolData = useBeatmaps();
+
+  const stageName = poolData?.stage?.toUpperCase() ?? 'GRAND FINALS';
+  const division = poolData?.division != null ? `DIVISION ${poolData.division}` : 'DIVISION 1';
 
   const tourney = data?.tourney;
   const bestOf = tourney?.bestOF || 11;
@@ -27,9 +29,9 @@ export const Header = () => {
       <TeamPanel side="red" name={red.name} points={red.points} maxPoints={maxPoints} />
       <div className={styles.middle}>
         <div className={styles.middleTop}>
-          <Logo division={DIVISION} size="86px" />
+          <Logo division={division} size="86px" />
         </div>
-        <span className={styles.stageName}>{STAGE_NAME}</span>
+        <span className={styles.stageName}>{stageName}</span>
       </div>
       <TeamPanel side="blue" name={blue.name} points={blue.points} maxPoints={maxPoints} />
     </header>
