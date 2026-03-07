@@ -3,7 +3,7 @@ import { useCurrentMap } from '@/hooks/useCurrentMap';
 import { useAnimatedNumber } from '@/hooks/useAnimatedNumber';
 import styles from './styles/TeamScores.module.css';
 
-const TEAM_SIZE = 3;
+const TEAM_SIZE = 4;
 
 const formatScore = (n: number) => n.toLocaleString('en-US');
 
