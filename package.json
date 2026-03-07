@@ -1,0 +1,21 @@
+{
+  "name": "ads-stream-overlay",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/nodecg/index.js",
+    "stop": "kill-port 9090",
+    "build": "npm run build --prefix bundles/overlay",
+    "dev": "concurrently --kill-others --names vite,nodecg --prefix-colors cyan,magenta \"npm run dev --prefix bundles/overlay\" \"node node_modules/nodecg/index.js\"",
+    "install:bundle": "npm install --prefix bundles/overlay",
+    "setup": "npm install && npm run install:bundle",
+    "dist": "node scripts/build-dist.mjs"
+  },
+  "dependencies": {
+    "nodecg": "^2.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "kill-port": "^2.0.1"
+  }
+}

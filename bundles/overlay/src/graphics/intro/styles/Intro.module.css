@@ -1,0 +1,78 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('@/assets/background.png');
+  background-position: center;
+  background-size: 1920px 1080px;
+  background-color: var(--background);
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  color: var(--white);
+  font-family: 'Proto Mono';
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.logoBlock {
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
+.dialog {
+  width: fit-content;
+  min-width: 600px;
+  color: var(--black);
+}
+
+.dialogBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 56px;
+}
+
+.startingSoon {
+  color: var(--black);
+  font-size: 48px;
+  letter-spacing: 4px;
+}
+
+.teams {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.teamName {
+  color: var(--black);
+  font-size: 32px;
+}
+
+.vs {
+  opacity: 0.5;
+  color: var(--black);
+  font-size: 20px;
+}
+
+.showcaseText {
+  color: var(--black);
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.countdown {
+  opacity: 0.6;
+  color: var(--black);
+  font-size: 24px;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,50 @@
+.panel {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 1920px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  z-index: 9999;
+  padding: 16px;
+}
+
+.panel button {
+  transition:
+    background 200ms ease,
+    color 200ms ease;
+  cursor: pointer;
+  border: 1px solid #444444;
+  background: #aaaaaa;
+  padding: 8px 14px;
+  color: var(--black);
+  font-size: 12px;
+  font-family: 'Proto Mono', monospace;
+  white-space: nowrap;
+}
+
+.panel button:hover {
+  background: #8a8a8a;
+}
+
+.panel button.active {
+  border-color: #444444;
+  background: var(--background);
+  color: var(--white);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.groupTitle {
+  padding: 0 2px;
+  color: #888;
+  font-size: 10px;
+  font-family: 'Proto Mono', monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

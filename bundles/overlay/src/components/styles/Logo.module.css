@@ -1,0 +1,46 @@
+.block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: 1;
+  font-family: 'Area';
+}
+
+.letters {
+  display: flex;
+}
+
+.letterA {
+  color: var(--white);
+}
+
+.letterD {
+  background-image: var(--metal-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.letterS {
+  color: var(--black);
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: 0.116em;
+  background: var(--rainbow-gradient);
+}
+
+.barSegment {
+  flex: 1;
+  height: 0.186em;
+}
+
+.division {
+  color: var(--white);
+  font-size: 0.128em;
+  font-family: 'Proto Mono';
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}

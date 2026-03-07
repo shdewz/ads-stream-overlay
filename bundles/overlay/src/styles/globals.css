@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@/assets/fonts/Inter-VariableFont_opsz,wght.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@/assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Proto Mono';
+  src: url('@/assets/fonts/ProtoMono-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'STP';
+  src: url('@/assets/fonts/STP_.ttf');
+}
+
+@font-face {
+  font-family: 'FormaDJRMicro';
+  src: url('@/assets/fonts/FormaDJRMicro-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: 'Area';
+  src: url('@/assets/fonts/Area-Black.otf');
+}
+
+:root {
+  --beatmap-width: 520px;
+  --beatmap-height: 72px;
+  --beatmap-gap: 12px;
+  --beatmap-padding: 4px;
+
+  --background: #283b92;
+  --dialogue-background: #c6c6c6;
+  --black: #0e0e0e;
+  --white: #fcfcfc;
+
+  --accent-mod-nm: #5071ad;
+  --accent-mod-hd: #d6ac5d;
+  --accent-mod-hr: #b35151;
+  --accent-mod-dt: #834fad;
+  --accent-mod-fm: #5ba35b;
+  --accent-mod-tb: #469c91;
+
+  --red: #bc2654;
+  --blue: #3c4ea1;
+
+  --rainbow-gradient: linear-gradient(
+    90deg,
+    rgba(0, 167, 221, 1) 0%,
+    rgba(51, 51, 144, 1) 20%,
+    rgba(232, 19, 135, 1) 40%,
+    rgba(234, 45, 46, 1) 60%,
+    rgba(252, 232, 43, 1) 80%,
+    rgba(0, 157, 84, 1) 100%
+  );
+
+  --rainbow-gradient-diagonal: linear-gradient(
+    135deg,
+    rgba(0, 167, 221, 1) 0%,
+    rgba(51, 51, 144, 1) 20%,
+    rgba(232, 19, 135, 1) 40%,
+    rgba(234, 45, 46, 1) 60%,
+    rgba(252, 232, 43, 1) 80%,
+    rgba(0, 157, 84, 1) 100%
+  );
+
+  --metal-gradient: linear-gradient(
+    90deg,
+    rgba(186, 187, 189, 1) 0%,
+    rgba(151, 155, 159, 1) 25%,
+    rgba(186, 187, 189, 1) 50%,
+    rgba(151, 155, 159, 1) 75%,
+    rgba(186, 187, 189, 1) 100%
+  );
+}
+
+html,
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: transparent;
+  line-height: 1;
+}

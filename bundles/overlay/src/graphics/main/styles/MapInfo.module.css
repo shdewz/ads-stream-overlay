@@ -1,0 +1,109 @@
+.container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-family: 'Proto Mono';
+  color: var(--white);
+  height: 120px;
+  width: 1360px;
+  font-variant-numeric: tabular-nums;
+  background-image: url('@/assets/stats-bg.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+.titleBlock {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 900px;
+  height: 80px;
+  overflow: hidden;
+  padding: 12px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 0 20px 0 0;
+}
+
+.titleAccent {
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  left: 20px;
+  bottom: 80px;
+  border-radius: 2px;
+  transform: translateY(50%);
+}
+
+.titleBg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--black);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.12);
+  filter: blur(2px) brightness(0.8) grayscale(0.3);
+}
+
+.titleContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title {
+  font-size: 22px;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sub {
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.7;
+}
+
+.statsBlock {
+  position: absolute;
+  left: 580px;
+  bottom: 0;
+  width: 340px;
+  height: 56px;
+  padding: 8px 18px;
+  clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% 100%, 0% 100%, 0% 10px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 18px;
+  row-gap: 2px;
+  align-items: center;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.stat {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  font-size: 15px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.label {
+  font-size: 11px;
+  opacity: 0.75;
+  text-transform: uppercase;
+}

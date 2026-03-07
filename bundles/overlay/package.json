@@ -1,0 +1,59 @@
+{
+  "name": "overlay",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build && vite build --config vite.panel.config.ts",
+    "dev": "vite build --watch --config vite.panel.config.ts & vite build --watch",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
+  },
+  "nodecg": {
+    "compatibleRange": "^2.0.0",
+    "graphics": [
+      {
+        "file": "main/index.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "mappool/index.html",
+        "width": 1920,
+        "height": 720
+      },
+      {
+        "file": "intro/index.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "dashboardPanels": [
+      {
+        "name": "mappool",
+        "file": "mappool/index.html",
+        "title": "Mappool",
+        "width": 3
+      }
+    ]
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^17.4.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.0.0",
+    "vite": "^5.4.11"
+  }
+}

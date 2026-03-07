@@ -1,0 +1,58 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  right: 22px;
+  left: 22px;
+  font-variant-numeric: tabular-nums;
+}
+
+.leadBarTrack {
+  position: relative;
+  height: 24px;
+  overflow: hidden;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+.leadBarLeft {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transition: width 400ms ease-out;
+  background-color: var(--red);
+  height: 100%;
+}
+
+.leadBarRight {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transition: width 400ms ease-out;
+  background-color: var(--blue);
+  height: 100%;
+}
+
+.scores {
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.score {
+  flex: 1;
+  transition: font-size 200ms ease;
+  padding: 0 24px;
+  font-size: 40px;
+  line-height: 1;
+  font-family: 'Proto Mono';
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.scoreRed {
+  color: var(--white);
+  text-align: right;
+}
+
+.scoreBlue {
+  color: var(--white);
+  text-align: left;
+}

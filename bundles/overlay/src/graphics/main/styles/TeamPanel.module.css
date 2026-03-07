@@ -1,0 +1,39 @@
+.team {
+  --team-color: var(--red);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 676px;
+  height: 100%;
+  color: var(--white);
+}
+
+.red {
+  --team-color: var(--red);
+}
+.blue {
+  --team-color: var(--blue);
+}
+
+.teamName {
+  color: var(--black);
+  font-size: 32px;
+}
+
+.teamPoints {
+  display: flex;
+  gap: 2px;
+  border: 2px solid var(--black);
+  padding: 2px;
+  width: fit-content;
+}
+
+.point {
+  aspect-ratio: 1;
+  width: 26px;
+}
+
+.point.filled {
+  background-color: var(--team-color);
+}

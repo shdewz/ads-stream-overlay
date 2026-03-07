@@ -1,0 +1,9 @@
+.footer {
+  position: relative;
+  flex: 1;
+  background-image: url('@/assets/background.png');
+  background-position: center bottom;
+  background-size: 1920px 1080px;
+  background-color: var(--background);
+  width: 100%;
+}

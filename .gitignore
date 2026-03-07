@@ -1,0 +1,22 @@
+# NodeCG
+node_modules/
+bundles/overlay/node_modules
+logs/
+db/
+/assets/
+
+# Release build
+dist/
+
+# Bundle build output
+bundles/*/graphics/
+
+cfg/*.json
+!cfg/nodecg.json
+
+examples/
+tools/
+data/streamer.json
+data/coming_up.json
+
+.github/

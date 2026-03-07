@@ -1,0 +1,225 @@
+/* ── Panel shell ─────────────────────────────────────────────────── */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+  min-width: 0;
+}
+
+.empty {
+  padding: 16px 10px;
+  color: #888;
+  font-size: 12px;
+}
+
+/* ── Toolbar ─────────────────────────────────────────────────────── */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 2px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.teams {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.teamRed {
+  color: #e05070;
+}
+.teamBlue {
+  color: #6680e0;
+}
+
+/* ── Mod group ───────────────────────────────────────────────────── */
+
+.modGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modHeader {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+
+/* ── Map row ─────────────────────────────────────────────────────── */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 6px;
+  border-radius: 4px;
+  background: #242424;
+  border: 1px solid #333;
+  transition:
+    border-color 200ms ease,
+    background 200ms ease;
+  min-width: 0;
+}
+
+.row.pickedRed {
+  border-color: #e05070;
+  background: #2a1820;
+}
+.row.pickedBlue {
+  border-color: #6680e0;
+  background: #181828;
+}
+.row.banned {
+  border-color: #555;
+  background: #1e1e1e;
+  opacity: 0.55;
+}
+
+/* ── Badge ───────────────────────────────────────────────────────── */
+
+.badge {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: monospace;
+  letter-spacing: 0.05em;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: #444;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* ── Meta ────────────────────────────────────────────────────────── */
+
+.meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mapTitle {
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mapDiff {
+  font-size: 10px;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stateIndicator {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: #333;
+  border: 1px solid #444;
+  transition: background 200ms ease;
+}
+
+/* ── Actions ─────────────────────────────────────────────────────── */
+
+.actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.btn {
+  cursor: pointer;
+  border: 1px solid #444;
+  border-radius: 3px;
+  background: #333;
+  color: #ddd;
+  font-size: 10px;
+  font-family: monospace;
+  font-weight: 700;
+  padding: 3px 6px;
+  white-space: nowrap;
+  transition:
+    background 150ms ease,
+    opacity 150ms ease;
+}
+
+.btn:hover {
+  background: #444;
+}
+.btn:active {
+  background: #555;
+}
+.btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.btnRed {
+  border-color: #8a2840;
+  color: #e05070;
+}
+.btnRed:hover {
+  background: #3a1820;
+}
+
+.btnBlue {
+  border-color: #344080;
+  color: #6680e0;
+}
+.btnBlue:hover {
+  background: #181830;
+}
+
+.btnBan {
+  border-color: #666;
+  color: #aaa;
+}
+
+.btnReset {
+  border-color: #555;
+  color: #aaa;
+  font-size: 13px;
+  padding: 2px 6px;
+}
+.btnReset:hover {
+  background: #3a3a3a;
+}
+
+/* ── Mod colour tokens ───────────────────────────────────────────── */
+
+.nm {
+  background: #3a4a6a;
+}
+.hd {
+  background: #6a5020;
+}
+.hr {
+  background: #6a2020;
+}
+.dt {
+  background: #4a2a6a;
+}
+.fm {
+  background: #2a5a2a;
+}
+.tb {
+  background: #1a5a55;
+}

@@ -1,0 +1,49 @@
+.dialog {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--dialogue-background);
+  padding: 4px;
+  font-family: 'Proto Mono';
+}
+
+.header {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px;
+  width: 100%;
+  height: 24px;
+}
+
+.title {
+  color: var(--white);
+}
+
+.buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: var(--dialogue-background);
+  width: 13px;
+  height: 13px;
+  color: var(--black);
+  font-weight: 800;
+  font-size: 15px;
+  font-family: 'Inter';
+}
+
+.buttonMinimize {
+  transform: translateY(-3px);
+}
+
+.buttonClose {
+  transform: scaleY(0.7);
+}
