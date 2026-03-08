@@ -8,7 +8,11 @@ interface NodeCGReplicant<T> {
 }
 
 interface NodeCGClient {
-  Replicant<T>(name: string, namespace?: string, options?: { defaultValue?: T }): NodeCGReplicant<T>;
+  Replicant<T>(
+    name: string,
+    namespace?: string,
+    options?: { defaultValue?: T }
+  ): NodeCGReplicant<T>;
   Replicant<T>(name: string, options?: { defaultValue?: T }): NodeCGReplicant<T>;
 }
 

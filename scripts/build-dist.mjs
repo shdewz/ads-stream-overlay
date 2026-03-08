@@ -32,25 +32,15 @@ function copyFile(src, dest) {
 }
 
 console.log('\nCleaning dist/');
-const nodeExeSrc = path.join(DIST, 'node.exe');
-const nodeExeTmp = path.join(ROOT, '_node.exe.tmp');
-const hasNodeExe = fs.existsSync(nodeExeSrc);
-if (hasNodeExe) fs.copyFileSync(nodeExeSrc, nodeExeTmp);
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST);
-if (hasNodeExe) {
-  fs.renameSync(nodeExeTmp, nodeExeSrc);
-}
 
 console.log('\nBuilding bundle');
 run('npm run build --prefix bundles/overlay');
 
-console.log('\nInstalling deps');
+console.log('\nCopying package files');
 copyFile(path.join(ROOT, 'package.json'), path.join(DIST, 'package.json'));
 copyFile(path.join(ROOT, 'package-lock.json'), path.join(DIST, 'package-lock.json'));
-run('npm ci --omit=dev', DIST);
-fs.rmSync(path.join(DIST, 'package.json'));
-fs.rmSync(path.join(DIST, 'package-lock.json'));
 
 console.log('\nCopying required files');
 
@@ -68,6 +58,7 @@ const bundleSrc = path.join(ROOT, 'bundles', 'overlay');
 const bundleDest = path.join(DIST, 'bundles', 'overlay');
 
 copyDir(path.join(bundleSrc, 'graphics'), path.join(bundleDest, 'graphics'));
+copyDir(path.join(bundleSrc, 'dashboard'), path.join(bundleDest, 'dashboard'));
 copyDir(path.join(bundleSrc, 'extension'), path.join(bundleDest, 'extension'));
 copyFile(path.join(bundleSrc, 'package.json'), path.join(bundleDest, 'package.json'));
 

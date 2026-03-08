@@ -10,9 +10,7 @@ export interface UseMappoolStateResult {
 }
 
 export const useMappoolState = (): UseMappoolStateResult => {
-  const repRef = useRef(
-    nodecg.Replicant<MappoolPickState>('mappoolState', { defaultValue: {} })
-  );
+  const repRef = useRef(nodecg.Replicant<MappoolPickState>('mappoolState', { defaultValue: {} }));
   const [state, setState] = useState<MappoolPickState>({});
 
   useEffect(() => {

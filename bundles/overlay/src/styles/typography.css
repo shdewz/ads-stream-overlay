@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('@/assets/fonts/Inter-VariableFont_opsz,wght.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@/assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Proto Mono';
+  src: url('@/assets/fonts/ProtoMono-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'STP';
+  src: url('@/assets/fonts/STP_.ttf');
+}
+
+@font-face {
+  font-family: 'FormaDJRMicro';
+  src: url('@/assets/fonts/FormaDJRMicro-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: 'Area';
+  src: url('@/assets/fonts/Area-Black.otf');
+}
+
+html,
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}

@@ -1,5 +1,3 @@
-/* ── Panel shell ─────────────────────────────────────────────────── */
-
 .panel {
   display: flex;
   flex-direction: column;
@@ -14,8 +12,6 @@
   font-size: 12px;
 }
 
-/* ── Toolbar ─────────────────────────────────────────────────────── */
-
 .toolbar {
   display: flex;
   align-items: center;
@@ -23,6 +19,36 @@
   padding: 4px 2px;
   border-bottom: 1px solid #333;
   padding-bottom: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.toolbarControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: #aaa;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.toggle input[type='checkbox'] {
+  cursor: pointer;
+  accent-color: #6680e0;
+}
+
+.pickerToggle {
+  display: flex;
+  gap: 2px;
 }
 
 .teams {
@@ -36,8 +62,6 @@
 .teamBlue {
   color: #6680e0;
 }
-
-/* ── Mod group ───────────────────────────────────────────────────── */
 
 .modGroup {
   display: flex;
@@ -56,8 +80,6 @@
   margin-bottom: 2px;
 }
 
-/* ── Map row ─────────────────────────────────────────────────────── */
-
 .row {
   display: flex;
   align-items: center;
@@ -73,20 +95,18 @@
 }
 
 .row.pickedRed {
-  border-color: #e05070;
-  background: #2a1820;
+  border-color: var(--redHighlight);
+  background: var(--redBackground);
 }
 .row.pickedBlue {
-  border-color: #6680e0;
-  background: #181828;
+  border-color: var(--blueHighlight);
+  background: var(--blueBackground);
 }
 .row.banned {
   border-color: #555;
   background: #1e1e1e;
   opacity: 0.55;
 }
-
-/* ── Badge ───────────────────────────────────────────────────────── */
 
 .badge {
   flex-shrink: 0;
@@ -96,12 +116,10 @@
   letter-spacing: 0.05em;
   padding: 2px 5px;
   border-radius: 3px;
-  background: #444;
-  color: #fff;
+  background: #444444;
+  color: #fcfcfc;
   white-space: nowrap;
 }
-
-/* ── Meta ────────────────────────────────────────────────────────── */
 
 .meta {
   flex: 1;
@@ -136,8 +154,6 @@
   border: 1px solid #444;
   transition: background 200ms ease;
 }
-
-/* ── Actions ─────────────────────────────────────────────────────── */
 
 .actions {
   display: flex;
@@ -203,7 +219,32 @@
   background: #3a3a3a;
 }
 
-/* ── Mod colour tokens ───────────────────────────────────────────── */
+.pickedRed .btnRed,
+.pickerToggle .btnRed {
+  background: #3a1820;
+}
+.pickedRed .btnRed:hover,
+.pickerToggle .btnRed:hover {
+  background: #4a2030;
+}
+
+.pickedBlue .btnBlue,
+.pickerToggle .btnBlue {
+  background: #181830;
+}
+.pickedBlue .btnBlue:hover,
+.pickerToggle .btnBlue:hover {
+  background: #202040;
+}
+
+.btnActive {
+  background: #3a3a5a;
+  border-color: #6680e0;
+  color: #99aaff;
+}
+.btnActive:hover {
+  background: #44446a;
+}
 
 .nm {
   background: #3a4a6a;

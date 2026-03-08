@@ -29,9 +29,9 @@
     ],
     "dashboardPanels": [
       {
-        "name": "mappool",
-        "file": "mappool/index.html",
-        "title": "Mappool",
+        "name": "controls",
+        "file": "controlpanel/index.html",
+        "title": "Control panel",
         "width": 3
       }
     ]

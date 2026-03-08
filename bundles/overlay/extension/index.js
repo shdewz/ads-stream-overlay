@@ -32,9 +32,11 @@ module.exports = function (nodecg) {
     persistent: false,
   });
 
-  fs.watch(comingUpPath, () => {
-    const fresh = load(comingUpPath);
-    if (fresh) comingUpRep.value = fresh;
+  fs.watch(path.dirname(comingUpPath), (_, filename) => {
+    if (filename === 'coming_up.json') {
+      const fresh = load(comingUpPath);
+      if (fresh) comingUpRep.value = fresh;
+    }
   });
 
   nodecg.Replicant('mappoolState', {

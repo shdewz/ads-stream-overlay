@@ -16,7 +16,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        'mappool/index': resolve(__dirname, 'src/panels/mappool/index.html'),
+        'controlpanel/index': resolve(__dirname, 'src/panels/controlpanel/index.html'),
       },
     },
   },

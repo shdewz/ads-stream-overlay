@@ -1,3 +1,4 @@
+import { Chat } from './Chat';
 import { TeamScores } from './TeamScores';
 import { MapInfo } from './MapInfo';
 import styles from './styles/Footer.module.css';
@@ -7,6 +8,7 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <TeamScores />
       <MapInfo />
+      <Chat />
     </footer>
   );
 };

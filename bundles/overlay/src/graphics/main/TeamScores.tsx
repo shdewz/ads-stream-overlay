@@ -32,13 +32,15 @@ export const TeamScores = () => {
   const right = useAnimatedNumber(rightRaw);
 
   const diff = Math.abs(left - right);
-  const barWidth = Math.min(25, Math.pow(diff / 1200000, 0.7) * 100);
+  const barWidth = Math.min(25, Math.pow(diff / (1200000 * TEAM_SIZE), 0.7) * 100);
 
   const leftLeads = left > right;
   const rightLeads = right > left;
 
+  const scoreVisible = data?.tourney?.scoreVisible ?? false;
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} style={{ opacity: scoreVisible ? 1 : 0 }}>
       <div className={styles.leadBarTrack}>
         <div className={styles.leadBarLeft} style={{ width: leftLeads ? `${barWidth}%` : '0%' }} />
         <div

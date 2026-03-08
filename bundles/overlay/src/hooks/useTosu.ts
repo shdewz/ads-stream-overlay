@@ -76,4 +76,4 @@ export const useTosu = (url: string = DEFAULT_URL): UseTosuResult => {
   }, [connect]);
 
   return { data, status };
-}
+};

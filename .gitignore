@@ -1,15 +1,14 @@
 # NodeCG
 node_modules/
-bundles/overlay/node_modules
+/bundles/*/node_modules/
+/bundles/*/dashboard/
+/bundles/*/graphics/
 logs/
 db/
 /assets/
 
 # Release build
 dist/
-
-# Bundle build output
-bundles/*/graphics/
 
 cfg/*.json
 !cfg/nodecg.json

@@ -78,7 +78,7 @@ export const MapCard = ({
       <div className={styles.meta}>
         <div className={styles.metaContent}>
           <div className={styles.title}>
-            {beatmap.artist} – {beatmap.title}
+            {beatmap.artist} - {beatmap.title}
           </div>
           <div className={styles.bottom}>
             <span className={styles.diff}>{beatmap.difficulty}</span>

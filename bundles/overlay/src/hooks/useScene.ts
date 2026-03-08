@@ -15,9 +15,7 @@ export interface UseSceneResult {
  * Returns the currently active scene and a setter that writes to the Replicant.
  */
 export const useScene = (): UseSceneResult => {
-  const repRef = useRef(
-    nodecg.Replicant<Scene>(REPLICANT_NAME, { defaultValue: 'gameplay' })
-  );
+  const repRef = useRef(nodecg.Replicant<Scene>(REPLICANT_NAME, { defaultValue: 'gameplay' }));
 
   const [scene, setSceneState] = useState<Scene>('gameplay');
   const [ready, setReady] = useState(false);
@@ -29,7 +27,9 @@ export const useScene = (): UseSceneResult => {
       setReady(true);
     };
     rep.on('change', handler);
-    return () => { rep.removeListener('change', handler); };
+    return () => {
+      rep.removeListener('change', handler);
+    };
   }, []);
 
   const setScene = useCallback((newScene: Scene) => {

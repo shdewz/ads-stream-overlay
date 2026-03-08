@@ -1,13 +1,14 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import '@/styles/vars.css';
 import './panel.css';
-import { MappoolPanel } from './MappoolPanel';
+import { ControlPanel } from './ControlPanel';
 
 const root = document.getElementById('root');
 if (!root) throw new Error('#root element not found');
 
 createRoot(root).render(
   <StrictMode>
-    <MappoolPanel />
-  </StrictMode>,
+    <ControlPanel />
+  </StrictMode>
 );

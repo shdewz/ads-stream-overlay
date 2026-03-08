@@ -6,9 +6,7 @@ import type { MappoolPickState, MapTeam } from '@/types/beatmap';
  * been picked (or no identifier is provided).
  */
 export const usePickedTeam = (identifier: string | undefined): MapTeam => {
-  const repRef = useRef(
-    nodecg.Replicant<MappoolPickState>('mappoolState', { defaultValue: {} })
-  );
+  const repRef = useRef(nodecg.Replicant<MappoolPickState>('mappoolState', { defaultValue: {} }));
   const [state, setState] = useState<MappoolPickState>({});
 
   useEffect(() => {

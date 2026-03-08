@@ -2,12 +2,13 @@ import { useBeatmaps } from '@/hooks/useBeatmaps';
 import { useMappoolState } from '@/hooks/useMappoolState';
 import { useTosu } from '@/hooks/useTosu';
 import { MapCard } from './MapCard';
-import { ControlPanel, ControlPanelGroup } from '@/components/ControlPanel';
+import { ControlPanel } from '@/components/ControlPanel';
+import { MappoolControls } from '@/components/MappoolControls';
 import styles from './styles/Mappool.module.css';
 
 export const Mappool = () => {
   const poolData = useBeatmaps();
-  const { state, pickMap, banMap, resetMap, resetMappool } = useMappoolState();
+  const { state, pickMap, banMap, resetMap } = useMappoolState();
   const { data } = useTosu();
   const redName = data?.tourney?.team.left || 'Red Team';
   const blueName = data?.tourney?.team.right || 'Blue Team';
@@ -22,9 +23,7 @@ export const Mappool = () => {
   return (
     <div className={styles.root}>
       <ControlPanel>
-        <ControlPanelGroup title="Mappool controls">
-          <button onClick={resetMappool}>Reset Mappool</button>
-        </ControlPanelGroup>
+        <MappoolControls />
       </ControlPanel>
       {Object.entries(byMod).map(([mod, maps]) => (
         <div key={mod} className={styles.modGroup}>

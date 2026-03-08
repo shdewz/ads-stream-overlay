@@ -1,8 +1,8 @@
 import { ControlPanel, ControlPanelGroup } from '@/components/ControlPanel';
+import { MappoolControls } from '@/components/MappoolControls';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { useScene } from '@/hooks/useScene';
-import { useMappoolState } from '@/hooks/useMappoolState';
 import { useState, useEffect, useRef } from 'react';
 import styles from './styles/App.module.css';
 import panelStyles from '@/components/styles/ControlPanel.module.css';
@@ -11,7 +11,6 @@ type MappoolState = 'hidden' | 'visible' | 'visible-instant' | 'fading-out';
 
 export const App = () => {
   const { scene, ready, setScene } = useScene();
-  const { resetMappool } = useMappoolState();
   const isMappool = scene === 'mappool';
 
   const [mappoolState, setMappoolState] = useState<MappoolState>('hidden');
@@ -76,9 +75,7 @@ export const App = () => {
             Mappool
           </button>
         </ControlPanelGroup>
-        <ControlPanelGroup title="Mappool controls">
-          <button onClick={resetMappool}>Reset Mappool</button>
-        </ControlPanelGroup>
+        <MappoolControls />
       </ControlPanel>
     </div>
   );

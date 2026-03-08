@@ -2,9 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import type { MappoolData } from '@/types/beatmap';
 
 export const useBeatmaps = (): MappoolData | null => {
-  const repRef = useRef(
-    nodecg.Replicant<MappoolData | null>('beatmaps', { defaultValue: null })
-  );
+  const repRef = useRef(nodecg.Replicant<MappoolData | null>('beatmaps', { defaultValue: null }));
   const [data, setData] = useState<MappoolData | null>(null);
 
   useEffect(() => {
