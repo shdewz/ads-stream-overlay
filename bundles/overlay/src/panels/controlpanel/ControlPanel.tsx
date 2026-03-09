@@ -2,6 +2,7 @@ import { useBeatmaps } from '@/hooks/useBeatmaps';
 import { useMappoolAutomation } from '@/hooks/useMappoolAutomation';
 import { useMappoolControl } from '@/hooks/useMappoolControl';
 import { useMappoolState } from '@/hooks/useMappoolState';
+import { useScene } from '@/hooks/useScene';
 import { useTosu } from '@/hooks/useTosu';
 import { MapRow } from './MapRow';
 import styles from './MappoolPanel.module.css';
@@ -14,6 +15,7 @@ export const ControlPanel = () => {
   const { data } = useTosu();
   const { control, setAutopick, setAutoadvance, setCurrentPicker } = useMappoolControl();
   const { handlePick } = useMappoolAutomation();
+  const { scene, setScene } = useScene();
 
   const redName = data?.tourney?.team.left || 'Red';
   const blueName = data?.tourney?.team.right || 'Blue';
@@ -37,43 +39,69 @@ export const ControlPanel = () => {
   return (
     <div className={styles.panel}>
       <div className={styles.toolbar}>
-        <span className={styles.teams}>
-          <span className={styles.teamRed}>{redName}</span>
-          {' vs '}
-          <span className={styles.teamBlue}>{blueName}</span>
-        </span>
-        <div className={styles.toolbarControls}>
-          <button
-            className={`${styles.btn} ${control.autopickEnabled ? styles.btnActive : ''}`}
-            onClick={() => setAutopick(!control.autopickEnabled)}
-          >
-            Autopick
-          </button>
-          <div className={styles.pickerToggle}>
-            <button
-              className={`${styles.btn} ${control.currentPicker === 'red' ? styles.btnRed : ''}`}
-              onClick={() => setCurrentPicker('red')}
-              title="Set next pick to Red"
-            >
-              R pick
-            </button>
-            <button
-              className={`${styles.btn} ${control.currentPicker === 'blue' ? styles.btnBlue : ''}`}
-              onClick={() => setCurrentPicker('blue')}
-              title="Set next pick to Blue"
-            >
-              B pick
-            </button>
+        <div className={styles.toolbarRow}>
+          <span className={styles.teams}>
+            <span className={styles.teamRed}>{redName}</span>
+            {' vs '}
+            <span className={styles.teamBlue}>{blueName}</span>
+          </span>
+        </div>
+        <div className={styles.toolbarGroup}>
+          <span className={styles.toolbarSubtitle}>Scene controls</span>
+          <div className={styles.toolbarRow}>
+            <div className={styles.pickerToggle}>
+              <button
+                className={`${styles.btn} ${scene === 'gameplay' ? styles.btnActive : ''}`}
+                onClick={() => setScene('gameplay')}
+              >
+                Gameplay
+              </button>
+              <button
+                className={`${styles.btn} ${scene === 'mappool' ? styles.btnActive : ''}`}
+                onClick={() => setScene('mappool')}
+              >
+                Mappool
+              </button>
+            </div>
           </div>
-          <button
-            className={`${styles.btn} ${control.autoadvanceEnabled ? styles.btnActive : ''}`}
-            onClick={() => setAutoadvance(!control.autoadvanceEnabled)}
-          >
-            Autoadvance
-          </button>
-          <button className={`${styles.btn} ${styles.btnReset}`} onClick={resetMappool}>
-            Reset All
-          </button>
+        </div>
+        <div className={styles.toolbarGroup}>
+          <span className={styles.toolbarSubtitle}>Mappool controls</span>
+          <div className={styles.toolbarRow}>
+            <div className={styles.toolbarControls}>
+              <button
+                className={`${styles.btn} ${control.autopickEnabled ? styles.btnActive : ''}`}
+                onClick={() => setAutopick(!control.autopickEnabled)}
+              >
+                Autopick
+              </button>
+              <div className={styles.pickerToggle}>
+                <button
+                  className={`${styles.btn} ${control.currentPicker === 'red' ? styles.btnRed : ''}`}
+                  onClick={() => setCurrentPicker('red')}
+                  title="Set next pick to Red"
+                >
+                  R pick
+                </button>
+                <button
+                  className={`${styles.btn} ${control.currentPicker === 'blue' ? styles.btnBlue : ''}`}
+                  onClick={() => setCurrentPicker('blue')}
+                  title="Set next pick to Blue"
+                >
+                  B pick
+                </button>
+              </div>
+              <button
+                className={`${styles.btn} ${control.autoadvanceEnabled ? styles.btnActive : ''}`}
+                onClick={() => setAutoadvance(!control.autoadvanceEnabled)}
+              >
+                Autoadvance
+              </button>
+              <button className={`${styles.btn} ${styles.btnReset}`} onClick={resetMappool}>
+                Reset All
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       {Object.entries(grouped).map(([mod, maps]) => (
