@@ -19,3 +19,6 @@ data/streamer.json
 data/coming_up.json
 
 .github/
+
+# Windows alternate data streams
+*:Zone.Identifier
