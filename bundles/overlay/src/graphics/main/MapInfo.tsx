@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTosu } from '@/hooks/useTosu';
 import { useCurrentMap } from '@/hooks/useCurrentMap';
 import { usePickedTeam } from '@/hooks/usePickedTeam';
+import { getModStats, scaleBpmByMods } from '@/utils/modStats';
 import styles from './styles/MapInfo.module.css';
 
 const formatStat = (n: number | undefined, dp = 2) => (n != null ? n.toFixed(dp) : '—');
@@ -25,17 +26,29 @@ export const MapInfo = () => {
   const beatmap = data?.beatmap;
   const stats = beatmap?.stats;
   const time = beatmap?.time;
+  const mapMods = currentMap?.mods;
 
   const title = beatmap ? `${beatmap.artist} - ${beatmap.title}` : '—';
   const sub = beatmap
     ? `[${beatmap.version}] mapped by ${currentMap?.mapper ?? beatmap.mapper}`
     : '';
 
+  const moddedStats =
+    stats != null
+      ? getModStats(
+          stats.cs.original,
+          stats.ar.original,
+          stats.od.original,
+          stats.bpm.common,
+          mapMods
+        )
+      : undefined;
+
   const sr = currentMap?.sr ?? stats?.stars?.total;
-  const cs = stats?.cs?.converted;
-  const ar = stats?.ar?.converted;
-  const od = stats?.od?.converted;
-  const bpm = stats?.bpm;
+  const cs = moddedStats?.cs ?? stats?.cs?.converted;
+  const ar = moddedStats?.ar ?? stats?.ar?.converted;
+  const od = moddedStats?.od ?? stats?.od?.converted;
+  const bpm = stats?.bpm ? scaleBpmByMods(stats.bpm, mapMods) : undefined;
   const lengthMs = time != null ? time.lastObject - time.firstObject : undefined;
 
   const bgFile = data?.files?.background;
