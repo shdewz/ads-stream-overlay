@@ -55,4 +55,4 @@ Build the bundle's assets:
 npm run build
 ```
 
-This runs `vite build` for both graphics and the dashboard panel, outputting to `bundles/overlay/graphics/` and `bundles/overlay/panels/`.
+This runs `vite build` for both graphics and the dashboard panel, outputting to `bundles/overlay/graphics/` and `bundles/overlay/dashboard/`.

@@ -2,6 +2,7 @@
 node_modules/
 /bundles/*/node_modules/
 /bundles/*/dashboard/
+/bundles/*/panels/
 /bundles/*/graphics/
 logs/
 db/
